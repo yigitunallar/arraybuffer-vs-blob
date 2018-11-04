@@ -59,7 +59,7 @@ Starts reading the contents of the specified Blob, once finished, the result att
 
 Starts reading the contents of the specified Blob, once finished, the result attribute contains a data: URL representing the file's data.
 
-# How to implement in WebRTC DataChannels?
+# How to implement in FileReader and Blob in WebRTC DataChannels?
 
 ```javascript
 const peerConnection = new RTCPeerConnection();
