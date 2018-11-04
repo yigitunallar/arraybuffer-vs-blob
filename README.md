@@ -14,9 +14,9 @@
 
 * An **ArrayBuffer** is in memory, available for manipulation. A **Blob** can be on disk, in cache memory, and other places that are not readily available. 
 
-* **Blob** can be passed directly into other functions like *window.URL.createObjectURL*.However, you may still need File APIs like *FileReader* to work with **Blob**.
+* **Blob** can be passed directly into other functions like ```window.URL.createObjectURL()```.However, you may still need File APIs like *FileReader* to work with **Blob**.
 
 * You can convert Blob to ArrayBuffer, and the other way also holds true. 
    * **Blob** can become an **ArrayBuffer** using *FileReader*'s ```readAsArrayBuffer()```method. 
-   * **ArrayBuffer** can also become **Blob** by using ```new Blob([new Uint8Array(data]); ```
+   * **ArrayBuffer** can also become **Blob** by using ```new Blob([new Uint8Array(data]); ```.
 
