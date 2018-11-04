@@ -39,3 +39,39 @@ function GET(url, callback) {
 }
 ```
 
+# Well, what is FileReader then?
+
+The FileReader object lets web applications asynchronously read the contents of files (or raw data buffers) stored on the user's computer, using **File** or **Blob** objects to specify the file or data to read.
+
+## Event Handlers
+
+```FileReader.onload```
+
+A handler for the load event. This event is triggered each time the reading operation is successfully completed.
+
+## Methods 
+
+```FileReader.readAsArrayBuffer()```
+
+Starts reading the contents of the specified Blob, once finished, the result attribute contains an ArrayBuffer representing the file's data.
+
+```FileReader.readAsDataURL()```
+
+Starts reading the contents of the specified Blob, once finished, the result attribute contains a data: URL representing the file's data.
+
+# How to implement in WebRTC DataChannels?
+
+```javascript
+const peerConnection = new RTCPeerConnection();
+
+const dataChannel = peerConnection.createDataChannel("myLabel", dataChannelOptions);
+dataChannel.binaryType = "arraybuffer";
+dataChannel.send(data); // "data" can be ArrayBuffer, Blob or ArrayBufferView or just String.
+...
+...
+dataChannel.onmessage = function(event){
+  let byteArray = new Uint8Array(event.data);
+  ...
+  ...
+}
+```
